@@ -1,0 +1,5 @@
+*.pyc
+.idea/misc.xml
+.idea/modules.xml
+.idea/RPG-TextGame.iml
+.idea/workspace.xml
