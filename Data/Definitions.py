@@ -17,7 +17,11 @@ townDesc = {
     "Hampstead": "Hampstead",
     "Stawford": "Stawford",
     "Millstone": "Millstone",
-    "Silverkeep": "Silverkeep"
+    "Silverkeep": "Silverkeep",
+    "Stawford": "Starford"
+}
+
+npcDesc = {
 }
 
 
@@ -32,4 +36,4 @@ inventory.add_Item(Classes.Item('Wooden Chestplate', 'Armor', [5], False))
 # for name in townNames:
 # townDict[name] = Classes.Town()
 # Sets the current town player is in.
-currTown = "Stawford"
+currTown = Classes.Town('Stawford')

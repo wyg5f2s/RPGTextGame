@@ -1,6 +1,6 @@
 import Inv_Stat
 import Definitions
-import NPCFunctions
+import Classes
 
 
 # Function that sets up start screen with naming your character
@@ -8,7 +8,6 @@ def start_screen():
     choice = None
 
     print("RPG-TEXT ADVENTURE")
-    print("\nBY BRENDAN KAILUKAITIS")
 
     # Print a list of available options for the start screen while choice != 0
     while choice != "0":
@@ -31,4 +30,16 @@ def start_screen():
             print("That is not an available option. Try again.")
 
 
+def town_screen(town):
+    choice = ''
+    print(town.description(town.name))
+    print('What do you want to do?: ')
+
+    while choice != '0':
+        print(town)
+
+        choice = input('Please select an option: ')
+
+
 start_screen()
+town_screen(Definitons.Town)

@@ -1,4 +1,4 @@
-from Definitions import itemDesc, townDesc, npcDesc
+import Definitions
 
 
 def inventory_Menu():
@@ -21,7 +21,7 @@ class Item():
             self.armor = stats[0]
 
     def __str__(self, name):
-        return itemDesc[name]
+        return Definitions.itemDesc[name]
 
 
 class Inventory():
@@ -43,7 +43,34 @@ class Inventory():
             item.isEquipped = False
 
         elif not item.isEquipped:
-            item.isEquipped = True
+            for x, invItem in enumerate(self.items):
+
+                while True:
+                    if self.items[x].isEquipped:
+                        print('You already have ' + invItem.name + ' Equipped')
+                        print('Do you want to equip new item or keep old one?')
+
+                        print("""
+                        1: Equip
+                        2: Keep
+                        """)
+
+                        choice = input('Please select an option: ')
+
+                        if choice == '1':
+                            self.items[x].isEquipped = False
+                            item.isEquipped = True
+                            break
+
+                        elif choice == '2':
+                            break
+
+                        else:
+                            print('That is not an option. Try again.')
+
+                    elif not self.items[x].isEquipped:
+                        item.isEquipped = True
+                        break
 
     def __str__(self):
         out = ''
@@ -76,7 +103,7 @@ class Npc():
             # vist_the_Merchant()
 
     def __str__(self, name):
-        return npcDesc[name]
+        return Definitions.npcDesc[name]
 
 
 class Town():
@@ -120,7 +147,7 @@ class Town():
         return out
 
     def description(self, name):
-        return townDesc[name]
+        return Definitions.townDesc[name]
 
 
 class TownMasterList():
