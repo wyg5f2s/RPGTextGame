@@ -1,6 +1,5 @@
-import Inv_Stat
+import Inv_Statst
 import Definitions
-import Classes
 
 
 # Function that sets up start screen with naming your character
@@ -40,6 +39,12 @@ def town_screen(town):
 
         choice = input('Please select an option: ')
 
+        if choice == '0':
+            # leave_Town()
+            pass
+
+        elif choice <= str(len(town.npcs)) and choice != '0':
+
 
 start_screen()
-town_screen(Definitons.Town)
+town_screen(Definitions.currTown)

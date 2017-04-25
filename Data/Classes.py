@@ -111,8 +111,8 @@ class Town():
     and printing npc actions"""
 
     def __init__(self, name):
-        self.town = []
-        self.town.append('Leave Town')
+        self.npcs = []
+        self.npcs.append('Leave Town')
         self.name = name
         self.townConnections = []
         self.townConnections.append('Enter Town')
@@ -124,24 +124,24 @@ class Town():
         self.townConnections.remove(connection)
 
     def add_Npc(self, npc):
-        self.town.append(npc)
+        self.npcs.append(npc)
 
     def delete_Npc(self, npc):
-        self.town.remove(npc)
+        self.npcs.remove(npc)
 
     def __str__(self):
         out = ''
-        for x, npc in enumerate(self.town):
-            if self.town[x] == 'Leave Town':
-                out += '\n' + str(x) + ': ' + self.town[x]
+        for x, npc in enumerate(self.npcs):
+            if self.npcs[x] == 'Leave npcs':
+                out += '\n' + str(x) + ': ' + self.npcs[x]
 
-            elif self.town[x].npcType == 'Priest':
+            elif self.npcs[x].npcType == 'Priest':
                 out += '\n' + str(x) + ': ' + 'Talk to the Priest'
 
-            elif self.town[x].npcType == 'Merchant':
+            elif self.npcs[x].npcType == 'Merchant':
                 out += '\n' + str(x) + ': ' + 'Visit the Merchant'
 
-            elif self.town[x].npcType == 'Ruler':
+            elif self.npcs[x].npcType == 'Ruler':
                 out += '\n' + str(x) + ': ' + 'Discuss with the Ruler'
                 inventory_Menu()
         return out

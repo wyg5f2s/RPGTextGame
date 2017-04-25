@@ -37,3 +37,4 @@ inventory.add_Item(Classes.Item('Wooden Chestplate', 'Armor', [5], False))
 # townDict[name] = Classes.Town()
 # Sets the current town player is in.
 currTown = Classes.Town('Stawford')
+currTown.add_Npc(Classes.Npc('Priest', 'Ezekiel', True))
